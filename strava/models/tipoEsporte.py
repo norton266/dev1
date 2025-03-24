@@ -11,9 +11,9 @@ class TipoEsporte(BaseModel):
         verbose_name='Esporte.'
     )
 
-def __str__ (self):
-    return f"{self.esporte}"
+    def __str__(self):
+        return f"{self.get_status_display()}"
 
-class Meta:
-    verbose_name = "Esporte"
-    verbose_name_plural = "Esportes"
+    class Meta:
+        verbose_name = "Esporte"
+        verbose_name_plural = "Esportes"

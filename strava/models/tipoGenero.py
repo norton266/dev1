@@ -11,9 +11,9 @@ class TipoGenero(BaseModel):
         verbose_name='Gênero.'
     )
 
-def __str__ (self):
-    return f"{self.genero}"
+    def __str__ (self):
+        return f"{self.genero}"
 
-class Meta:
-    verbose_name = "Gênero"
-    verbose_name_plural = "Gêneros"
+    class Meta:
+        verbose_name = "Gênero"
+        verbose_name_plural = "Gêneros"

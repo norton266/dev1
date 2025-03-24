@@ -11,9 +11,9 @@ class TipoMarca(BaseModel):
         verbose_name='Marca.'
     )
 
-def __str__ (self):
-    return f"{self.marca}"
+    def __str__(self):
+        return f"{self.get_status_display()}"
 
-class Meta:
-    verbose_name = "Marca"
-    verbose_name_plural = "Marcas"
+    class Meta:
+        verbose_name = "Marca"
+        verbose_name_plural = "Marcas"

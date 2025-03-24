@@ -11,9 +11,10 @@ class TipoEquipamento(BaseModel):
         verbose_name='Equipamento.'
     )
 
-def __str__ (self):
-    return f"{self.equipamento}"
+    def __str__(self):
+        return f"{self.get_status_display()}"
 
-class Meta:
-    verbose_name = "Equipamento"
-    verbose_name_plural = "Equipamentos"
+
+    class Meta:
+        verbose_name = "Equipamento"
+        verbose_name_plural = "Equipamentos"
