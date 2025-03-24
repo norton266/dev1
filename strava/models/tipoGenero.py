@@ -12,7 +12,7 @@ class TipoGenero(BaseModel):
     )
 
     def __str__ (self):
-        return f"{self.genero}"
+        return f"{self.get_genero_display()}"
 
     class Meta:
         verbose_name = "Gênero"

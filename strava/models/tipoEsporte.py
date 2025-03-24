@@ -12,7 +12,7 @@ class TipoEsporte(BaseModel):
     )
 
     def __str__(self):
-        return f"{self.get_status_display()}"
+        return f"{self.get_esporte_display()}"
 
     class Meta:
         verbose_name = "Esporte"

@@ -12,7 +12,7 @@ class TipoEquipamento(BaseModel):
     )
 
     def __str__(self):
-        return f"{self.get_status_display()}"
+        return f"{self.get_equipamento_display()}"
 
 
     class Meta:

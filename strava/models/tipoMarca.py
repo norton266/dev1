@@ -12,7 +12,7 @@ class TipoMarca(BaseModel):
     )
 
     def __str__(self):
-        return f"{self.get_status_display()}"
+        return f"{self.get_marca_display()}"
 
     class Meta:
         verbose_name = "Marca"
