@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'dev1',
     'my_app',
     'strava',
+    'aula',
 ]
 
 MIDDLEWARE = [
