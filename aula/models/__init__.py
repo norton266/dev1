@@ -4,4 +4,5 @@ from .person import *
 from .article import *
 from .reporter import *
 from .magazine import *
+from .publication import *
 

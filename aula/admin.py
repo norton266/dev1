@@ -4,6 +4,7 @@ from aula.models import Passport
 from aula.models import Reporter
 from aula.models import Article
 from aula.models import Magazine
+from aula.models import Publication
 
 
 # Register your models here.
@@ -13,3 +14,4 @@ admin.site.register(Passport)
 admin.site.register(Reporter)
 admin.site.register(Article)
 admin.site.register(Magazine)
+admin.site.register(Publication)
