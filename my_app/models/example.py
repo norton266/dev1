@@ -2,6 +2,7 @@ from django.core.validators import MinValueValidator,MaxValueValidator
 from .base_model import BaseModel
 from django.db import models
 from my_app.enumerations import Status
+from aula.validators import *
 
 class Example(BaseModel):
     description = models.CharField(
@@ -10,7 +11,7 @@ class Example(BaseModel):
         verbose_name="Descrição",
     )
     quality = models.IntegerField(
-        validators=[MinValueValidator(0), MaxValueValidator(100)],
+        validators=[MinValueValidator(0), MaxValueValidator(100), validate_par],
         default=50,
         help_text="Valor número para a qualidade do exemplo. Entre 0 e 100.",
         verbose_name="Qualidade",
@@ -46,6 +47,24 @@ class Example(BaseModel):
 
     def __str__(self):
         return f"{self.description} ({self.status}-{self.get_status_display()})"  # campo do tipo charfield com choices, libera o metodo get_status_display. mOstra o que está nos parenteses, na classe Status
+
+    def clean(self):
+        if not isinstance(str(self.description), str):
+                raise ValidationError({
+                    "description": 'Descrição informada é do tipo errado'
+                },
+                code='error001')
+        elif self.description == 'Teste':
+            raise ValidationError(
+                {"description": 'Não é possível salvar testes!'},
+                code='error002'
+            )
+        elif self.url == '1111111111111' and self.description == 'IFRS Restinga':
+            raise ValidationError(
+                {'description': 'Combinação de descrição e url errada',
+                 'url': 'Combinação de nome e código errado'},
+                code='error0101'
+            )
 
     class Meta:
         verbose_name = "Exemplo"
